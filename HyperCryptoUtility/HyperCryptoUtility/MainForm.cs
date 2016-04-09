@@ -4,6 +4,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using Hyper.Core.Cryptography;
 using Hyper.Cryptography;
 using Hyper.Extensibility.IO;
 using Hyper.IO;
@@ -71,8 +72,8 @@ namespace HyperCryptoUtility
             {
                 var encryptionService = CreateEncryptionService2();
 
-                Func<byte[], string, string, byte[]> fileTransformDelegate = null;
-                Func<string, string, string, string> stringTransformDelegate = null;
+                Func<byte[], string, string, byte[]> fileTransformDelegate;
+                Func<string, string, string, string> stringTransformDelegate;
 
                 string saveDialogTitle;
                 TextBox srcStringTextBox;
@@ -141,7 +142,7 @@ namespace HyperCryptoUtility
                     {
                         canTransformFile = (
                             MessageBox.Show(
-                                string.Format("{0} already exists.\r\n Do you want to replace it?", Path.GetFileName(dstFilePath)),
+                                $"{Path.GetFileName(dstFilePath)} already exists.\r\n Do you want to replace it?",
                                 "Confirm Save As",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning,

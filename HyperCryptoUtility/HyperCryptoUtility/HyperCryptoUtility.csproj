@@ -35,11 +35,13 @@
     <ApplicationIcon>key.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Hyper.Core">
-      <HintPath>..\packages\Hyper.Core.1.0.0.4\lib\net45\Hyper.Core.dll</HintPath>
+    <Reference Include="Hyper.Core, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hyper.Core.2.1.0.0\lib\net45\Hyper.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Hyper.Core.Extensibility">
-      <HintPath>..\packages\Hyper.Core.Extensibility.1.0.0.2\lib\net45\Hyper.Core.Extensibility.dll</HintPath>
+    <Reference Include="Hyper.Core.Extensibility, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hyper.Core.Extensibility.2.0.0.0\lib\net45\Hyper.Core.Extensibility.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
